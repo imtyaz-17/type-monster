@@ -1,6 +1,6 @@
 const display = document.getElementById("display");
 const question = document.getElementById("question");
-const startBtn = document.getElementById("starts");
+const startBtn = document.getElementById("start");
 const countdownOverlay = document.getElementById("countdown");
 const resultModal = document.getElementById("result");
 const modalBackground = document.getElementById("modal-background");
@@ -71,7 +71,6 @@ const gameOver = () => {
 
   // show result modal
   resultModal.innerHTML = "";
-  
   resultModal.classList.toggle("hidden");
   modalBackground.classList.toggle("hidden");
   // clear user text
@@ -108,7 +107,7 @@ const start = () => {
   countdownOverlay.style.display = "flex";
 
   const startCountdown = setInterval(() => {
-    countdownOverlay.innerHTML = `<h1>${count}</h1>`;
+    countdownOverlay.innerHTML = '<h1>${count}</h1>';
 
     // finished timer
     if (count == 0) {
@@ -119,7 +118,6 @@ const start = () => {
 
       clearInterval(startCountdown);
       startTime = new Date().getTime();
-      countdownOverlay.style.display='none';
     }
     count--;
   }, 1000);
